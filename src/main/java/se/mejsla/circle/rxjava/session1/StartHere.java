@@ -12,7 +12,7 @@ public class StartHere {
      * Hint: map
      */
     public static Observable<String> helloMap(Observable<String> name) {
-        return Observable.error(new RuntimeException("Not Implemented"));
+        return name.map(s -> "Hello " + s);
     }
 
     /**
@@ -24,7 +24,7 @@ public class StartHere {
      * Hint: concat
      */
     public static Observable<String> concatObservables(Observable<String> s1, Observable<String> s2) {
-        return Observable.error(new RuntimeException("Not Implemented"));
+        return  Observable.concat(s1, s2);
     }
 
     /**
@@ -36,7 +36,7 @@ public class StartHere {
      * Hint: merge
      */
     public static Observable<String> mergeObservables(Observable<String> s1, Observable<String> s2) {
-        return Observable.error(new RuntimeException("Not Implemented"));
+        return  Observable.merge(s1, s2);
     }
 
 }

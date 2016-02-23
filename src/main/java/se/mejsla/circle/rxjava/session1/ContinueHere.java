@@ -13,7 +13,7 @@ public class ContinueHere {
      * Hint: zipWith
      */
     public static Observable<Integer> sumPairs(Observable<Integer> o1, Observable<Integer> o2) {
-        return Observable.error(new RuntimeException("Not Implemented"));
+        return o1.zipWith(o2, (i1, i2) -> i1 + i2);
     }
 
     /**
@@ -23,7 +23,7 @@ public class ContinueHere {
      * Hint: scan
      */
     public static Observable<Integer> multiply(Observable<Integer> integers) {
-        return Observable.error(new RuntimeException("Not Implemented"));
+        return integers.scan((v1, v2) -> v1 * v2);
     }
 
     /**
@@ -34,6 +34,6 @@ public class ContinueHere {
      * Hint: filter & reduce
      */
     public static Observable<Integer> sumOfAllEvenNumbers(Observable<Integer> integers) {
-        return Observable.error(new RuntimeException("Not Implemented"));
+        return integers.filter((i) -> i % 2 == 0).reduce((i1,i2)-> i1 + i2);
     }
 }

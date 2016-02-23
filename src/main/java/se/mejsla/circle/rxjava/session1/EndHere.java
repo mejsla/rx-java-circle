@@ -14,7 +14,7 @@ public class EndHere {
      * Hint: amb
      */
     public static Observable<String> getFromFastestSource(Observable<String> s1, Observable<String> s2) {
-        return Observable.error(new RuntimeException("Not Implemented"));
+        return Observable.amb(s1, s2);
     }
 
     /**
@@ -25,7 +25,7 @@ public class EndHere {
      * Hint: groupBy
      */
     public static Observable<GroupedObservable<Integer, String>> groupBySentenceLength(Observable<String> strings) {
-        return Observable.error(new RuntimeException("Not Implemented"));
+        return strings.groupBy(album -> album.split(" ").length);
     }
 
 }
